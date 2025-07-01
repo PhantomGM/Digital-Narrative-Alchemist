@@ -1,1 +1,90 @@
-TTRPG DNA SystemOverviewThe TTRPG DNA System is a powerful content generation engine designed for tabletop role-playing game (TTRPG) Game Masters (GMs). It uses a unique "DNA" string—a coded representation of a game element's core traits—to procedurally generate rich, narrative-driven content such as NPCs, factions, quests, magic items, and more.This system is designed to combat creative block, save preparation time, and introduce unique, thematically consistent elements into any game.How It Works (Current GPT/Gem Implementation)In its current form, the system is designed to be used within a Custom GPT or Gemini Gem environment. The logic is distributed across four core files that work in concert:Core ComponentsMaster_System_Prompt.md - The ConductorRole: This is the brain of the operation. It acts as a state machine that manages the entire conversational flow with the user.Function: It greets the user, presents the main creation menus, and guides them through the generation options (e.g., "Fully Random," "Highly Detailed"). It orchestrates which of the other files are used and in what order.Master_Generator_Knowledge.py - The DNA ForgeRole: This is the engine that forges the unique "DNA" strings.Function: It contains a set of Python functions, each designed to randomly generate a valid DNA string for a specific content type (e.g., generate_npc_dna(), generate_faction_dna()). The GPT executes this code to create the foundational data for a new piece of content.Master_Menu_Options.md - The User InterfaceRole: This file defines the detailed, user-facing menus for fine-tuned content creation.Function: When a user selects the "Highly Detailed" option, the system presents the corresponding menu from this file. It collects the user's specific inputs (e.g., an NPC's name, a faction's ideology) and contains instructions for the AI on how those inputs should influence the final generation.Master_Decoder_Knowledge.md - The StorytellerRole: This is the core knowledge base that translates the abstract DNA into a compelling narrative.Function: It contains detailed, structured prompts that instruct the AI on how to interpret a given DNA string and any additional user context. It ensures the final output is not just a list of stats, but a well-written, system-agnostic profile ready to be dropped into a game.The WorkflowThe generation process follows a clear, context-driven hierarchy:Initiation: The user conversation begins, guided by Master_System_Prompt.md.Selection: The user chooses a content type (e.g., "NPC") and a generation method (e.g., "Highly Detailed").DNA Generation: The system calls the relevant function in Master_Generator_Knowledge.py to create a base DNA string.Context Gathering: The system presents a menu from Master_Menu_Options.md to gather specific details from the user.DNA Modification: The user's input is used to programmatically alter the base DNA string, aligning it with their vision.Decoding & Narrative Weaving: The final, modified DNA string and all other user-provided context are fed into the corresponding decoder prompt from Master_Decoder_Knowledge.md.Final Output: The system delivers a fully-realized, narrative description of the content, with the underlying DNA mechanics hidden from view.Future Plans & RoadmapThe ultimate goal is to evolve this system from a GPT-based tool into a standalone, user-friendly Web Application.Phase 1: Core Engine Refactor[ ] Port DNA Generation: Convert the Python functions in Master_Generator_Knowledge.py into a robust backend service (e.g., a Python Flask/FastAPI microservice) or a client-side JavaScript module.[ ] Structure Decoding Prompts: Convert the narrative prompts in Master_Decoder_Knowledge.md into a structured format (like JSON) that can be programmatically used to make API calls to a large language model (e.g., Gemini API).Phase 2: Web Interface (GUI) Development[ ] Framework Selection: Choose a modern web framework (e.g., React, Svelte, Vue.js) for building the user interface.[ ] UI/UX Design: Design a clean, intuitive interface that replicates the menu-driven flow of the original system.[ ] Component Creation: Build interactive forms based on Master_Menu_Options.md for detailed content creation.[ ] Display Results: Create beautifully formatted display components for the generated content.Phase 3: Backend & API Integration[ ] Backend Scaffolding: Set up a backend server or serverless function architecture to handle user requests.[ ] API Endpoints: Create API endpoints (e.g., /generate/npc, /generate/quest) that the front-end can call.[ ] LLM Integration: Integrate the backend with a generative AI API (e.g., Google's Gemini API) to handle the "decoding" step. The backend will send the DNA and context to the model and return the formatted result to the UI.Phase 4: Advanced Features[ ] User Accounts: Implement user authentication to allow for saving, editing, and organizing generated content.[ ] Campaign Management: Create a "Campaign" or "World" view where users can link generated content together (e.g., this NPC belongs to that Faction and gives out this Quest).[ ] Export Functionality: Allow users to export their creations to various formats, such as PDF, JSON, or Markdown.[ ] Community Sharing: Build a feature to allow users to share their creations with others.LicenseThis project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.[][cc-by-nc]This means you are free to:Share — copy and redistribute the material in any medium or formatAdapt — remix, transform, and build upon the materialUnder the following terms:Attribution — You must give appropriate credit.NonCommercial — You may not use the material for commercial purposes.As the copyright holder, I reserve the right to use this project for commercial purposes. For more details, see the LICENSE file.[]: #[cc-by-nc]: http://creativecommons.org/licenses/by-nc/4.0/
+# **DNA: Digital Narrative Alchemist System**
+
+## **Overview**
+
+The **DNA: Digital Narrative Alchemist System** is a powerful content generation engine designed for tabletop role-playing game (TTRPG) Game Masters (GMs). It uses a unique “DNA” string—a coded representation of a game element’s core traits—to procedurally generate rich, narrative-driven content such as NPCs, factions, quests, magic items, and more.
+
+This system is designed to:
+- Combat creative block  
+- Save preparation time  
+- Introduce unique, thematically consistent elements into any game  
+
+---
+
+## **How It Works (Current GPT/Gem Implementation)**
+
+In its current form, the system is designed to be used within a **Custom GPT or Gemini Gem** environment. The logic is distributed across four core files:
+
+### **Core Components**
+
+#### 🔹 `Master_System_Prompt.md` – *The Conductor*
+- **Role**: The brain of the operation; manages the entire conversational flow.
+- **Function**: Greets the user, presents creation menus, and orchestrates the generation flow (e.g., “Fully Random,” “Highly Detailed”).
+
+#### 🔹 `Master_Generator_Knowledge.py` – *The DNA Forge*
+- **Role**: The engine that forges unique DNA strings.
+- **Function**: Contains Python functions (e.g., `generate_npc_dna()`, `generate_faction_dna()`) that generate base DNA for content.
+
+#### 🔹 `Master_Menu_Options.md` – *The User Interface*
+- **Role**: Defines the detailed, user-facing creation menus.
+- **Function**: Presents forms for user inputs (e.g., NPC’s name, faction ideology) and guides how they influence DNA.
+
+#### 🔹 `Master_Decoder_Knowledge.md` – *The Storyteller*
+- **Role**: The core knowledge base for decoding DNA into narrative.
+- **Function**: Translates DNA + user context into rich, structured content without showing the mechanical DNA.
+
+---
+
+## **The Workflow**
+
+The generation process follows a context-driven hierarchy:
+
+1. **Initiation**: Conversation begins, guided by `Master_System_Prompt.md`.
+2. **Selection**: User chooses content type (e.g., NPC) and generation method (e.g., "Highly Detailed").
+3. **DNA Generation**: `Master_Generator_Knowledge.py` generates base DNA.
+4. **Context Gathering**: Prompts from `Master_Menu_Options.md` collect user input.
+5. **DNA Modification**: User inputs alter the base DNA string to reflect specific intent.
+6. **Decoding & Narrative Weaving**: Final DNA and context decoded via `Master_Decoder_Knowledge.md`.
+7. **Final Output**: User receives a polished, system-agnostic narrative. The DNA is hidden from view.
+
+---
+
+## **Future Plans & Roadmap**
+
+### **Phase 1: Core Engine Refactor**
+- [ ] **Port DNA Generation**: Turn `Master_Generator_Knowledge.py` into a backend service (Flask/FastAPI) or JavaScript module.
+- [ ] **Structure Decoding Prompts**: Convert prompts in `Master_Decoder_Knowledge.md` into structured JSON for API calls.
+
+### **Phase 2: Web Interface (GUI) Development**
+- [ ] **Framework Selection**: Choose React, Svelte, Vue.js, or similar.
+- [ ] **UI/UX Design**: Build a clean, menu-driven interface.
+- [ ] **Component Creation**: Turn menus from `Master_Menu_Options.md` into interactive forms.
+- [ ] **Display Results**: Format and display final output attractively.
+
+### **Phase 3: Backend & API Integration**
+- [ ] **Backend Scaffolding**: Stand up a backend server or serverless architecture.
+- [ ] **API Endpoints**: Create endpoints (e.g., `/generate/npc`) for front-end calls.
+- [ ] **LLM Integration**: Use Gemini API (or similar) to decode DNA and return output.
+
+### **Phase 4: Advanced Features**
+- [ ] **User Accounts**: Login and save/edit content.
+- [ ] **Campaign Management**: Link generated assets (e.g., tie an NPC to a quest).
+- [ ] **Export Functionality**: Export to PDF, JSON, or Markdown.
+- [ ] **Community Sharing**: Users can publish and browse shared content.
+
+---
+
+## **License**
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format  
+- **Adapt** — remix, transform, and build upon the material  
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit  
+- **NonCommercial** — You may not use the material for commercial purposes  
+
+> **Note:** As the copyright holder, I reserve the right to use this project for commercial purposes.  
+> See the `LICENSE` file for more details.
