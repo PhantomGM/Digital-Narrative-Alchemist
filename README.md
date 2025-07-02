@@ -18,6 +18,7 @@ In its current form, the system is designed to be used within a **Custom GPT or 
 ### **Core Components**
 
 #### 🔹 `Master_System_Prompt.md` – *The Conductor*
+- **Usage**: This file isn't uploaded, it's contents are the System Instructions. There are two, one for ChatGPT and one for Gemini.
 - **Role**: The brain of the operation; manages the entire conversational flow.
 - **Function**: Greets the user, presents creation menus, and orchestrates the generation flow (e.g., “Fully Random,” “Highly Detailed”).
 
