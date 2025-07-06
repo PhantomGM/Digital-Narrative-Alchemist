@@ -73,7 +73,7 @@ The generation process follows a context-driven hierarchy:
 - [ ] **Export Functionality**: Export to PDF, JSON, or Markdown.
 - [ ] **Community Sharing**: Users can publish and browse shared content.
 
-### **Want to give feedback? Click New issue → 🧪 DNA System – Structured Feedback and share your thoughts!
+### **Want to give feedback? Click New issue → 🧪 DNA System – Structured Feedback and share your thoughts!**
 
 ---
 
