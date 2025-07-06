@@ -1,58 +1,69 @@
-name: 🧪 DNA System – Structured Feedback
-description: Share detailed feedback on the Digital Narrative Alchemist (DNA) system.
+name: "🧪 DNA System – Structured Feedback"
+description: "Share detailed feedback on the Digital Narrative Alchemist (DNA) system."
 title: "[Feedback] DNA System – "
-labels: ["feedback", "needs-triage"]
+labels:
+  - feedback
+  - needs-triage
 assignees: []
 
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to help improve the **Digital Narrative Alchemist (DNA)** system!  
+        Thank you for taking the time to help improve the **Digital Narrative Alchemist (DNA)** system!
         Please fill out the sections below to provide actionable and structured feedback.
-        Feel free to elaborate or skip any sections you’re unsure about.
 
   - type: textarea
     id: usage
     attributes:
-      label: **1. How did you use the system?**
-      description: Describe your path—e.g., generated an NPC, faction, setting, or tested custom inputs.
+      label: "1. How did you use the system?"
+      description: "Describe your path—e.g., generated an NPC, faction, setting, or tested custom inputs."
       placeholder: "I used path X to generate Y, and then tried Z."
+    validations:
+      required: false
 
   - type: textarea
     id: highlights
     attributes:
-      label: **2. What stood out as most valuable or impressive?**
-      description: Be specific—what felt fresh, interesting, surprising, or well-crafted?
+      label: "2. What stood out as most valuable or impressive?"
+      description: "Be specific—what felt fresh, interesting, surprising, or well-crafted?"
+    validations:
+      required: false
 
   - type: textarea
     id: confusion
     attributes:
-      label: **3. What felt unclear, confusing, or filler?**
-      description: Were there sections that didn’t make sense or where you paused?
+      label: "3. What felt unclear, confusing, or filler?"
+      description: "Were there sections that didn’t make sense or where you paused?"
+    validations:
+      required: false
 
   - type: textarea
     id: missing
     attributes:
-      label: **4. Was anything missing or less helpful than expected?**
-      description: e.g., needed more context, examples, hooks, etc.
+      label: "4. Was anything missing or less helpful than expected?"
+      description: "e.g., needed more context, examples, hooks, etc."
+    validations:
+      required: false
 
   - type: textarea
     id: usability
     attributes:
-      label: **5. Did the output feel usable in a game/story? Why or why not?**
-      description: Explain whether you'd put it to use, adapt it, or scrap it.
+      label: "5. Did the output feel usable in a game/story? Why or why not?"
+      description: "Explain whether you'd put it to use, adapt it, or scrap it."
+    validations:
+      required: false
 
   - type: textarea
     id: improvement
     attributes:
-      label: **6. If you could change or add *one thing*, what would it be?**
-      description: Even a small tweak helps—tone, structure, visual clarity, example depth, etc.
+      label: "6. If you could change or add *one thing*, what would it be?"
+      description: "Even a small tweak helps—tone, structure, visual clarity, example depth, etc."
+    validations:
+      required: false
 
   - type: markdown
     attributes:
       value: |
         ---
-        > **💡 Tip:** Don’t know where to start? Copy and paste your answers from above or reply inline.
-        Thanks again—your voice is what shapes the next iteration.
-
+        💡 **Tip:** You can copy your answers from above or reply inline. Thanks again—your voice shapes the next iteration.
