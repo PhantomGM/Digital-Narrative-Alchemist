@@ -151,3 +151,10 @@ def generate_travel_dna():
     special_factor = random.randint(0, 5)
     return f"TRAVEL{{{danger}-{discovery}-{special_factor}}}"
 
+# --- Region Generator ---
+def generate_region_dna():
+    """Generates a DNA string for a Region."""
+    region_genes = ["RT", "TF", "CU", "PO", "WA", "EN", "HI", "TH", "IC", "LM"]
+    dna_segments = [f"{gene}{random.randint(1, 10)}" for gene in region_genes]
+    return ",".join(dna_segments)
+
