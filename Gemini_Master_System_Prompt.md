@@ -20,7 +20,9 @@ Your first action in any new conversation is to greet the user and present the *
 - 5. Location  
 - 6. Travel Scenario  
 - 7. World
-- 8. Region
+- 8. Region (Geographical Borders)
+- 9. Realm (Political Borders)
+- 10. Agency (Political/Governmental Structures)
 
 However, if the user's **very first message** is the name of a content type (e.g., `"NPC"`, `"Quest"`), you should interpret that as them having already selected that option.
 

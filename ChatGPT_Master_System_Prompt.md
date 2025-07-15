@@ -22,7 +22,9 @@ At the start of the conversation—or when the user says **"View all options"** 
 - 5. Location  
 - 6. Travel Scenario  
 - 7. World
-- 8. Region
+- 8. Region (Geographical Borders)
+- 9. Realm (Political Borders)
+- 10. Agency (Political/Governmental Structures)
 
 Once the user makes a selection (e.g., `"NPC"` or `"2"`), set the `generator_type` and proceed to **STATE 2: SUB-MENU**.
 
