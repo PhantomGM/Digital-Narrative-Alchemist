@@ -1,4 +1,4 @@
-# 🌍 Master Menu Options (v2)
+# 🌍 Master Menu Options (v2.2)
 
 This file contains the detailed creation menus for each content type. When a user selects the "Highly Detailed" generation option, present the relevant menu. The system will first try to populate the menu from any uploaded files, then apply the user's manual inputs, which always take precedence.
 
@@ -48,7 +48,7 @@ _E.g., A god left behind a machine no one dares touch; All the birds are spies_
 
 > You may also upload files—world bibles, setting briefs, tone docs—and those will be integrated automatically.
 
-## Realm Creation Menu (NEW)
+## Realm Creation Menu
 
 **Instructions:** Reply with the number of the option followed by your information to guide the realm's political design.
 
@@ -94,6 +94,27 @@ _E.g., A god left behind a machine no one dares touch; All the birds are spies_
 12. **Extra Context:** (Any other important details or notes)
     
 
+## REGIONAL POI CREATION MENU
+
+**Instructions:** Reply with the number of the option followed by your information to guide the POI's creation.
+
+1. **POI Name or Concept:** (e.g., The Sunken Library of Azmar, a cursed ruin)
+    
+2. **Primary Type:** (e.g., Dungeon, Ruin, Mage Tower, Magical Anomaly, Lair)
+    
+3. **General Appearance/Condition:** (e.g., Overgrown and crumbling, pristine and magically preserved)
+    
+4. **Origin Story Hint:** (e.g., Created by a mad wizard, a scar from an ancient war)
+    
+5. **Primary Inhabitants or Threat:** (e.g., Goblins and their beastly pets, a powerful lich guardian)
+    
+6. **What makes it important to the region?** (e.g., It's a source of a valuable resource, a local legend says a hero is buried there)
+    
+7. **A known secret or rumor:** (e.g., It's said to be a gateway to another plane)
+    
+8. **Extra Context:** (Any other important details or notes)
+    
+
 ## Location Creation Menu
 
 **Instructions:** Reply with the number of the option followed by your information to guide the location's design.
@@ -117,7 +138,7 @@ _E.g., A god left behind a machine no one dares touch; All the birds are spies_
 9. **Extra Context:** (Any other important details or notes)
     
 
-## Agency Creation Menu (NEW)
+## Agency Creation Menu
 
 **Instructions:** Reply with the number of the option followed by your information to guide the agency's creation.
 
@@ -269,19 +290,88 @@ _E.g., A god left behind a machine no one dares touch; All the birds are spies_
 8. **Extra Context:** (Any other important details or notes)
     
 
+## ESTABLISHMENT CREATION MENU
+
+**Instructions:** Reply with the number of the option followed by your information to guide the establishment's creation.
+
+1. **Name or Concept:** (e.g., The Salty Siren, a smuggler's den)
+    
+2. **Establishment Type:** (e.g., Tavern, Black Market, Temple, Guildhall)
+    
+3. **Atmosphere:** (e.g., Cozy and welcoming, Tense and secretive, Grimy and dangerous)
+    
+4. **Primary Offering/Service:** (e.g., Food and drink, Forbidden knowledge, Rare goods)
+    
+5. **Staff & Clientele:** (e.g., Run by a family, Frequented by disguised monsters)
+    
+6. **A Known Secret or Rumor:** (e.g., There's a hidden room in the cellar, The owner is a spy)
+    
+7. **Source of Conflict or Danger:** (e.g., Harassed by a local gang, Built over a dungeon)
+    
+8. **External Connection:** (e.g., Relies on a noble patron, A front for a criminal syndicate)
+    
+9. **Extra Context:** (Any other important details or notes)
+    
+
+## TRAP CREATION MENU
+
+**Instructions:** Reply with the number of the option followed by your information to guide the trap's design.
+
+1. **Trap Name or Concept:** (e.g., The Sunken Blade of Al'khem)
+    
+2. **Trap Type:** (e.g., Mechanical, Magical, Psychological, Environmental)
+    
+3. **Trigger:** (e.g., Pressure plate, Spoken command word, Proximity to an aura)
+    
+4. **Primary Effect:** (e.g., Shoots poisoned darts, Creates a zone of silence, Ages the victim)
+    
+5. **Intended Purpose:** (e.g., To guard treasure, To capture intruders alive, To test worthiness)
+    
+6. **Creator/Origin:** (e.g., A mad wizard, An ancient civilization, A natural phenomenon)
+    
+7. **Overall Feel:** (e.g., "Simple but deadly," "Complex and convoluted puzzle," "Subtle and hard to detect")
+    
+8. **Extra Context:** (Any other important details or notes)
+    
+
+## WORLD WONDER CREATION MENU
+
+**Instructions:** Reply with the number of the option followed by your information to guide the World Wonder's creation.
+
+1. **Wonder Name or Concept:** (e.g., The Clockwork Heart of the World)
+    
+2. **Wonder Type:** (e.g., Natural formation, Ancient ruin, Living biome, Magical structure)
+    
+3. **Form & Condition:** (e.g., A pristine, impossibly tall tower; A crumbling, petrified forest)
+    
+4. **Origin Story:** (e.g., Built by a lost race, A scar from a war between gods, A natural anomaly)
+    
+5. **Primary Environmental or Magical Effect:** (e.g., Causes storms for miles, The area is a wild magic zone)
+    
+6. **Cultural Impact:** (e.g., It's a sacred pilgrimage site, It's feared and avoided, Its true purpose is forgotten)
+    
+7. **Core Secret:** (e.g., It's the prison of a forgotten god, It's a key to another dimension)
+    
+8. **A Contradiction to Explore:** (e.g., "It's a pristine ruin," "It's a powerful and world-changing artifact, but it is completely unguarded")
+    
+9. **Extra Context:** (Any other important details or notes)
+    
+
 ### ⚠️ AI PROCESSING INSTRUCTIONS - DO NOT SHOW TO USER
 
 - **General:** The system will first try to populate the menu from any uploaded files, then apply the user's manual inputs, which always take precedence.
     
-- **World:** Use inputs as narrative guidance. Silently prefer user input over random generation where there is a direct conflict. Decode using the format in `Master_Decoder_Knowledge.md (v2)`.
+- **World:** Use inputs as narrative guidance. Silently prefer user input over random generation where there is a direct conflict. Decode using the format in `Master_Decoder_Knowledge.md`.
     
-- **Realm (NEW):** Modify the base Realm DNA by adjusting `CONFLICT` and `STATUS` values based on user input before decoding.
+- **Realm:** Modify the base Realm DNA by adjusting `CONFLICT` and `STATUS` values based on user input before decoding.
     
 - **Region:** Modify the base Region DNA by adjusting values based on the user's focus and other text inputs before decoding.
     
+- **Regional POI:** Modify the base `REG_POI` DNA by adjusting gene values that correspond to the user's inputs before decoding. Use the inputs as strong narrative guidance for interpretation.
+    
 - **Location:** Modify the base Location DNA by adjusting primary scales or specific block values (e.g., `ARCH`, `CULTURE`) based on user focus before decoding.
     
-- **Agency (NEW):** Modify the base Agency DNA by setting `TYPE` and `REP` based on user input before decoding.
+- **Agency:** Modify the base Agency DNA by setting `TYPE` and `REP` based on user input before decoding.
     
 - **NPC:** Modify the base DNA string using the user's input for alignment and traits before decoding.
     
@@ -292,3 +382,5 @@ _E.g., A god left behind a machine no one dares touch; All the birds are spies_
 - **Magic Item:** Modify the base Item DNA by adjusting core scales based on user focus before decoding.
     
 - **Travel:** Modify the base Travel DNA by directly setting D, S, or SF values based on user preference before decoding.
+    
+- **Establishment, Trap, World Wonder:** Modify the base DNA by adjusting gene values that correspond to the user's inputs before decoding. Use the inputs as strong narrative guidance for interpretation. For World Wonders, pay special attention to the "Contradiction to Explore" to leverage the custom decoding logic.
